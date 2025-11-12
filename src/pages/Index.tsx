@@ -13,7 +13,6 @@ import {
   Radar,
   ScanFace,
   Shield,
-  SignalHigh,
   Sparkles,
 } from "lucide-react";
 
@@ -211,41 +210,55 @@ const Index = () => {
                 <Card className="border-white/10 bg-white/[0.04] backdrop-blur-md">
                   <CardHeader className="pb-3">
                     <div className="flex items-center gap-3">
-                      <Radar className="h-5 w-5 text-accent" />
-                      <CardTitle className="text-lg text-white">Signal Highlights</CardTitle>
+                      <Sparkles className="h-5 w-5 text-accent" />
+                      <CardTitle className="text-lg text-white">Career Impact</CardTitle>
                     </div>
                     <CardDescription className="text-sm text-muted-foreground">
-                      Impact metrics from recent security and AI product leadership.
+                      Outcomes from leading AI security and log intelligence products.
                     </CardDescription>
                   </CardHeader>
-                  <CardContent className="grid gap-3">
-                    {[
-                      {
-                        label: "Launch Stage",
-                        value: "Growth · Series B+",
-                        icon: Cpu,
-                      },
-                      {
-                        label: "Ownership",
-                        value: "Head of Product, AI Governance",
-                        icon: Sparkles,
-                      },
-                      {
-                        label: "Key Metric",
-                        value: "NPS +41 within 2 quarters",
-                        icon: SignalHigh,
-                      },
-                    ].map(({ label, value, icon: Icon }) => (
-                      <div key={label} className="flex items-center justify-between rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3">
-                        <div className="flex items-center gap-3">
-                          <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg border border-white/10 bg-white/[0.05]">
-                            <Icon className="h-4 w-4 text-accent" />
-                          </span>
-                          <span className="text-xs uppercase tracking-[0.32em] text-muted-foreground">{label}</span>
-                        </div>
-                        <span className="text-sm font-medium text-white">{value}</span>
-                      </div>
-                    ))}
+                  <CardContent className="space-y-4 text-sm text-muted-foreground">
+                    <div className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/5 p-4 leading-relaxed">
+                      <CheckCircle2 className="mt-1 h-5 w-5 text-accent" />
+                      <span>Spearheaded AI-modeled threat detection vision and strategy, elevating security posture across the Salesforce ecosystem.</span>
+                    </div>
+                    <div className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/5 p-4 leading-relaxed">
+                      <CheckCircle2 className="mt-1 h-5 w-5 text-accent" />
+                      <span>Drove initiatives that unlocked $300M+ ACV by strengthening customer trust through actionable threat detection.</span>
+                    </div>
+                    <div className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/5 p-4 leading-relaxed">
+                      <CheckCircle2 className="mt-1 h-5 w-5 text-accent" />
+                      <span>Operationalized an enterprise log management platform, enabling rapid search and investigation of potential incidents.</span>
+              </div>
+            </CardContent>
+          </Card>
+                <Card className="border-white/10 bg-white/[0.04] backdrop-blur-md">
+                  <CardHeader className="pb-3">
+                    <div className="flex items-center gap-3">
+                      <Cloud className="h-5 w-5 text-primary" />
+                      <CardTitle className="text-lg text-white">Cloud Security Wins</CardTitle>
+                    </div>
+                    <CardDescription className="text-sm text-muted-foreground">
+                      Scaling governance and protection across hyperscale environments.
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="space-y-4 text-sm text-muted-foreground">
+                    <div className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/5 p-4 leading-relaxed">
+                      <CheckCircle2 className="mt-1 h-5 w-5 text-accent" />
+                      <span>Led migration of CSPM platforms spanning 10k+ Salesforce public cloud accounts to expand multi-cloud misconfiguration coverage.</span>
+                    </div>
+                    <div className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/5 p-4 leading-relaxed">
+                      <CheckCircle2 className="mt-1 h-5 w-5 text-accent" />
+                      <span>Program-managed security launches for Gov Cloud, unlocking $900M+ in annual order value.</span>
+                    </div>
+                    <div className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/5 p-4 leading-relaxed">
+                      <CheckCircle2 className="mt-1 h-5 w-5 text-accent" />
+                      <span>Directed retail and consumer goods security programs driving $200M+ in annual order value.</span>
+                    </div>
+                    <div className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/5 p-4 leading-relaxed">
+                      <CheckCircle2 className="mt-1 h-5 w-5 text-accent" />
+                      <span>Deployed policy guardrails to blunt external and insider threats before exploit paths materialized.</span>
+                    </div>
                   </CardContent>
                 </Card>
                 <Card className="border-white/10 bg-white/[0.04] backdrop-blur-md">
@@ -264,11 +277,11 @@ const Index = () => {
                     </div>
                     <div className="rounded-xl border border-white/10 bg-white/5 p-4">
                       Prioritize economic resilience—ship experiences that create new income streams for users.
-                    </div>
+                </div>
                   </CardContent>
                 </Card>
               </div>
-            </div>
+                </div>
           </section>
 
           <section className="border-b border-border/40 py-20">
@@ -330,8 +343,8 @@ const Index = () => {
                               <span className="text-sm text-muted-foreground">{item}</span>
                             </div>
                           ))}
-                        </div>
-                        <div className="flex flex-wrap gap-2">
+              </div>
+              <div className="flex flex-wrap gap-2">
                           {badges.map((badge) => (
                             <Badge key={badge} variant="secondary" className="border border-white/10 bg-white/5 text-xs text-muted-foreground">
                               {badge}
@@ -343,8 +356,8 @@ const Index = () => {
                   </Card>
                 ))}
               </div>
-            </div>
-          </section>
+        </div>
+      </section>
 
           <section className="border-b border-border/40 bg-white/[0.03] py-20 backdrop-blur-xl">
             <div className="container space-y-12">
@@ -356,41 +369,41 @@ const Index = () => {
                 <p className="text-base text-muted-foreground">
                   I build operating models that harmonize product velocity with the rigor of enterprise security. From data
                   pipelines to customer trust, every layer is intentional.
-                </p>
-              </div>
-
+            </p>
+          </div>
+          
               <div className="grid gap-8 lg:grid-cols-2">
                 {securityFocus.map(({ title, icon: Icon, description, bullets }) => (
                   <Card key={title} className="border-white/10 bg-white/[0.04] backdrop-blur-lg">
-                    <CardHeader>
+              <CardHeader>
                       <div className="flex items-center gap-4">
                         <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.06]">
                           <Icon className="h-6 w-6 text-primary" />
-                        </div>
+                  </div>
                         <div>
                           <CardTitle className="text-xl text-white">{title}</CardTitle>
                           <CardDescription className="text-xs uppercase tracking-[0.3em] text-muted-foreground">
                             Security Product Strategy
-                          </CardDescription>
-                        </div>
-                      </div>
+                </CardDescription>
+                  </div>
+                </div>
                       <CardDescription className="pt-3 text-sm text-muted-foreground">{description}</CardDescription>
-                    </CardHeader>
-                    <CardContent>
+              </CardHeader>
+              <CardContent>
                       <ul className="space-y-3 text-sm text-muted-foreground">
                         {bullets.map((item) => (
                           <li key={item} className="flex items-start gap-3">
                             <span className="mt-1 h-1.5 w-1.5 rounded-full bg-accent" />
                             <span>{item}</span>
-                          </li>
+                  </li>
                         ))}
-                      </ul>
-                    </CardContent>
-                  </Card>
+                </ul>
+              </CardContent>
+            </Card>
                 ))}
-              </div>
-            </div>
-          </section>
+          </div>
+        </div>
+      </section>
 
           <section className="py-20">
             <div className="container grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-start">
@@ -402,50 +415,50 @@ const Index = () => {
                   <CardHeader className="space-y-4 text-center">
                     <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full border border-white/20 bg-white/10">
                       <Brain className="h-7 w-7 text-accent" />
-                    </div>
+                </div>
                     <CardTitle className="text-3xl text-white">AI Consultancy Services</CardTitle>
                     <CardDescription className="text-base text-muted-foreground">
                       Strategic partnerships for executives who need responsible AI and security initiatives to ship faster with conviction.
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent className="space-y-6">
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-6">
                     <div className="grid gap-6 sm:grid-cols-2">
                       <div className="rounded-2xl border border-white/15 bg-white/5 p-5 text-left">
                         <h4 className="mb-3 flex items-center gap-2 text-sm font-semibold text-white">
                           <Lock className="h-4 w-4 text-accent" />
-                          Strategy & Governance
-                        </h4>
-                        <ul className="space-y-2 text-sm text-muted-foreground">
+                    Strategy & Governance
+                  </h4>
+                  <ul className="space-y-2 text-sm text-muted-foreground">
                           <li>• AI roadmaps and value articulation</li>
-                          <li>• Governance framework design</li>
+                    <li>• Governance framework design</li>
                           <li>• Risk modeling & mitigation</li>
                           <li>• Regulatory readiness</li>
-                        </ul>
-                      </div>
+                  </ul>
+                </div>
                       <div className="rounded-2xl border border-white/15 bg-white/5 p-5 text-left">
                         <h4 className="mb-3 flex items-center gap-2 text-sm font-semibold text-white">
                           <Shield className="h-4 w-4 text-accent" />
                           Security & Delivery
-                        </h4>
-                        <ul className="space-y-2 text-sm text-muted-foreground">
+                  </h4>
+                  <ul className="space-y-2 text-sm text-muted-foreground">
                           <li>• Secure ML pipeline design</li>
                           <li>• Privacy and model safeguards</li>
                           <li>• GTM & customer onboarding</li>
                           <li>• Team enablement programs</li>
-                        </ul>
-                      </div>
-                    </div>
+                  </ul>
+                </div>
+              </div>
                     <div className="rounded-2xl border border-white/20 bg-white/10 p-6 text-center">
                       <p className="text-sm text-muted-foreground">
                         Ready to align product velocity with governance rigor? Let’s architect a roadmap designed for your stage.
                       </p>
                       <Button size="lg" className="mt-5 bg-white text-background hover:bg-white/90">
-                        <Mail className="mr-2 h-5 w-5" />
-                        Discuss Your Project
-                      </Button>
-                    </div>
-                  </CardContent>
-                </Card>
+                  <Mail className="mr-2 h-5 w-5" />
+                  Discuss Your Project
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
               </div>
 
               <div className="space-y-6">
@@ -499,8 +512,8 @@ const Index = () => {
                   </CardContent>
                 </Card>
               </div>
-            </div>
-          </section>
+        </div>
+      </section>
         </main>
 
         <footer className="border-t border-border/40 bg-background/60 py-10 backdrop-blur-xl">
@@ -525,7 +538,7 @@ const Index = () => {
             <p className="text-xs text-muted-foreground/80">© {new Date().getFullYear()} Evan Wiley. All rights reserved.</p>
           </div>
         </footer>
-      </div>
+        </div>
     </div>
   );
 };
