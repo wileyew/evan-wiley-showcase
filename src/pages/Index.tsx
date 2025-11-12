@@ -11,6 +11,7 @@ import {
   LucideIcon,
   Mail,
   Radar,
+  ScanFace,
   Shield,
   SignalHigh,
   Sparkles,
@@ -25,6 +26,7 @@ const Index = () => {
     description: string;
     bullets: string[];
     badges: string[];
+    href: string;
   }[] = [
     {
       title: "AI Governance Platform",
@@ -38,6 +40,7 @@ const Index = () => {
         "Transparent decision intelligence for executive stakeholders",
       ],
       badges: ["AI/ML", "Compliance", "Enterprise"],
+      href: "https://www.overflowprompts.net",
     },
     {
       title: "bagsy.space",
@@ -51,6 +54,7 @@ const Index = () => {
         "Modular workspace APIs for internal tooling",
       ],
       badges: ["Collaboration", "Realtime", "SaaS"],
+      href: "https://bagsy.space",
     },
   ];
 
@@ -99,10 +103,35 @@ const Index = () => {
                 <p className="text-sm text-muted-foreground">Security Product Leader · AI Governance · Cloud</p>
               </div>
             </div>
-            <div className="hidden items-center gap-3 md:flex">
-              <Badge variant="secondary" className="bg-white/5 text-xs tracking-wider text-foreground">
-                Available for advisory & fractional leadership
-              </Badge>
+            <div className="hidden items-center gap-4 md:flex">
+              <div className="flex flex-col gap-3">
+                <div className="flex items-center gap-3 rounded-2xl border border-accent/40 bg-accent/10 px-4 py-3 text-left shadow-[0_18px_40px_-28px_rgba(64,207,255,0.7)]">
+                  <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-accent/50 bg-background/70">
+                    <ScanFace className="h-5 w-5 text-accent" />
+                  </span>
+                  <div>
+                    <p className="text-[11px] uppercase tracking-[0.45em] text-accent/80">Now Shipping</p>
+                    <p className="text-sm font-medium text-white">Veridex · Deepfake Identifier</p>
+                  </div>
+                </div>
+                <a
+                  href="https://bagsy.space"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center gap-3 rounded-2xl border border-primary/40 bg-primary/10 px-4 py-3 text-left shadow-[0_18px_40px_-28px_rgba(120,86,255,0.7)] transition hover:-translate-y-0.5 hover:border-primary/60 hover:bg-primary/15"
+                >
+                  <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-primary/50 bg-background/70">
+                    <Command className="h-5 w-5 text-primary" />
+                  </span>
+                  <div>
+                    <p className="text-[11px] uppercase tracking-[0.45em] text-primary/80">Now Shipping</p>
+                    <p className="text-sm font-medium text-white">
+                      bagsy.space · Driveway Marketplace
+                    </p>
+                    <p className="text-[11px] text-muted-foreground/80">Born from layoffs—helping people earn semi-passive driveway income.</p>
+                  </div>
+                </a>
+              </div>
               <Button size="sm" variant="outline" className="border-white/20 bg-white/5 text-foreground hover:bg-white/10">
                 <Mail className="mr-2 h-4 w-4" />
                 Connect
@@ -130,6 +159,12 @@ const Index = () => {
                     I translate complex governance and security problems into human-centered, revenue-driving products.
                     From zero-to-one discovery to scaled expansion, I partner with engineering, GTM, and compliance teams
                     to ship outcomes users trust.
+                  </p>
+                  <p className="max-w-xl text-sm uppercase tracking-[0.32em] text-muted-foreground/80">
+                    <a href="https://bagsy.space" target="_blank" rel="noreferrer" className="text-primary underline decoration-primary/40 underline-offset-4 transition hover:text-primary/80 hover:decoration-primary/60">
+                      bagsy.space
+                    </a>{" "}
+                    emerged during tech layoffs—reimagining driveways as semi-passive income streams for resilient operators.
                   </p>
                 </div>
                 <div className="flex flex-wrap items-center gap-4">
@@ -172,42 +207,63 @@ const Index = () => {
                 </div>
               </div>
 
-              <div className="relative">
-                <div className="absolute inset-0 -translate-y-4 rounded-3xl border border-white/10 bg-gradient-to-br from-white/8 via-white/0 to-white/5 blur-lg" />
-                <Card className="relative h-full border-white/10 bg-white/[0.05] shadow-[0_25px_55px_-30px_rgba(120,86,255,0.65)] backdrop-blur-lg">
-                  <CardHeader className="space-y-4">
+              <div className="relative flex flex-col gap-6">
+                <Card className="border-white/10 bg-white/[0.04] backdrop-blur-md">
+                  <CardHeader className="pb-3">
                     <div className="flex items-center gap-3">
-                      <span className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-white/5">
-                        <Cpu className="h-5 w-5 text-accent" />
-                      </span>
-                      <div>
-                        <p className="text-xs uppercase tracking-[0.35em] text-muted-foreground">Now Shipping</p>
-                        <CardTitle className="text-xl text-white">AI Trust Console</CardTitle>
-                      </div>
+                      <Radar className="h-5 w-5 text-accent" />
+                      <CardTitle className="text-lg text-white">Signal Highlights</CardTitle>
                     </div>
                     <CardDescription className="text-sm text-muted-foreground">
-                      Responsible AI dashboard unifying governance workflows, runtime telemetry, and executive-ready reporting.
+                      Impact metrics from recent security and AI product leadership.
                     </CardDescription>
                   </CardHeader>
-                  <CardContent className="space-y-5">
-                    <div className="grid gap-3">
-                      {[
-                        { label: "Launch Stage", value: "Growth · Series B+" },
-                        { label: "My Role", value: "Head of Product, AI Governance" },
-                        { label: "Key Metric", value: "NPS +41 within 2 quarters" },
-                      ].map((item) => (
-                        <div key={item.label} className="flex items-center justify-between rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3">
-                          <span className="text-xs uppercase tracking-wide text-muted-foreground">{item.label}</span>
-                          <span className="text-sm font-medium text-white">{item.value}</span>
+                  <CardContent className="grid gap-3">
+                    {[
+                      {
+                        label: "Launch Stage",
+                        value: "Growth · Series B+",
+                        icon: Cpu,
+                      },
+                      {
+                        label: "Ownership",
+                        value: "Head of Product, AI Governance",
+                        icon: Sparkles,
+                      },
+                      {
+                        label: "Key Metric",
+                        value: "NPS +41 within 2 quarters",
+                        icon: SignalHigh,
+                      },
+                    ].map(({ label, value, icon: Icon }) => (
+                      <div key={label} className="flex items-center justify-between rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3">
+                        <div className="flex items-center gap-3">
+                          <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg border border-white/10 bg-white/[0.05]">
+                            <Icon className="h-4 w-4 text-accent" />
+                          </span>
+                          <span className="text-xs uppercase tracking-[0.32em] text-muted-foreground">{label}</span>
                         </div>
-                      ))}
-                    </div>
-                    <div className="flex items-center justify-between rounded-2xl border border-accent/40 bg-accent/10 p-4">
-                      <div>
-                        <p className="text-xs uppercase tracking-[0.3em] text-accent">Signal</p>
-                        <p className="text-sm text-muted-foreground">Coverage across compliance, risk, and engineering</p>
+                        <span className="text-sm font-medium text-white">{value}</span>
                       </div>
-                      <SignalHigh className="h-8 w-8 text-accent" />
+                    ))}
+                  </CardContent>
+                </Card>
+                <Card className="border-white/10 bg-white/[0.04] backdrop-blur-md">
+                  <CardHeader className="pb-3">
+                    <CardTitle className="text-lg text-white">Operator Principles</CardTitle>
+                    <CardDescription className="text-sm text-muted-foreground">
+                      Grounding beliefs from shipping governance, security, and sustainability products.
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="space-y-4 text-sm text-muted-foreground">
+                    <div className="rounded-xl border border-white/10 bg-white/5 p-4">
+                      Build trust-first platforms where compliance is a feature—not a constraint.
+                    </div>
+                    <div className="rounded-xl border border-white/10 bg-white/5 p-4">
+                      Design feedback loops that convert telemetry into decisive, human-readable insight.
+                    </div>
+                    <div className="rounded-xl border border-white/10 bg-white/5 p-4">
+                      Prioritize economic resilience—ship experiences that create new income streams for users.
                     </div>
                   </CardContent>
                 </Card>
@@ -234,7 +290,7 @@ const Index = () => {
               </div>
 
               <div className="grid gap-8 lg:grid-cols-2">
-                {productHighlights.map(({ title, tag, icon: Icon, accent, description, bullets, badges }) => (
+                {productHighlights.map(({ title, tag, icon: Icon, accent, description, bullets, badges, href }) => (
                   <Card
                     key={title}
                     className="group relative border-white/10 bg-white/[0.04] transition-all duration-500 hover:-translate-y-1 hover:border-accent/50 hover:shadow-[0_25px_55px_-30px_rgba(120,86,255,0.55)]"
@@ -242,39 +298,48 @@ const Index = () => {
                     <div className="absolute -inset-px rounded-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100">
                       <div className="h-full w-full rounded-3xl bg-gradient-to-br from-accent/20 via-transparent to-primary/30 blur-[32px]" />
                     </div>
-                    <CardHeader className="relative">
-                      <div className="flex items-start justify-between gap-6">
-                        <div className="inline-flex rounded-2xl border border-white/10 bg-white/[0.06] p-3">
-                          <Icon
-                            className={`h-7 w-7 ${
-                              accent === "accent" ? "text-accent" : accent === "primary" ? "text-primary" : "text-primary-glow"
-                            }`}
-                          />
-                        </div>
-                        <Badge variant="secondary" className="border border-white/15 bg-white/10 text-xs uppercase tracking-[0.25em] text-muted-foreground">
-                          {tag}
-                        </Badge>
-                      </div>
-                      <CardTitle className="text-2xl text-white">{title}</CardTitle>
-                      <CardDescription className="text-sm text-muted-foreground">{description}</CardDescription>
-                    </CardHeader>
-                    <CardContent className="relative space-y-6">
-                      <div className="space-y-3">
-                        {bullets.map((item) => (
-                          <div key={item} className="flex items-start gap-3">
-                            <CheckCircle2 className="mt-1 h-5 w-5 text-accent" />
-                            <span className="text-sm text-muted-foreground">{item}</span>
+                    <a
+                      href={href}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="relative flex h-full flex-col rounded-3xl p-1 text-left transition group-hover:brightness-[1.05]"
+                    >
+                      <CardHeader className="relative">
+                        <div className="flex items-start justify-between gap-6">
+                          <div className="inline-flex rounded-2xl border border-white/10 bg-white/[0.06] p-3">
+                            <Icon
+                              className={`h-7 w-7 ${
+                                accent === "accent" ? "text-accent" : accent === "primary" ? "text-primary" : "text-primary-glow"
+                              }`}
+                            />
                           </div>
-                        ))}
-                      </div>
-                      <div className="flex flex-wrap gap-2">
-                        {badges.map((badge) => (
-                          <Badge key={badge} variant="secondary" className="border border-white/10 bg-white/5 text-xs text-muted-foreground">
-                            {badge}
+                          <Badge variant="secondary" className="border border-white/15 bg-white/10 text-xs uppercase tracking-[0.25em] text-muted-foreground">
+                            {tag}
                           </Badge>
-                        ))}
-                      </div>
-                    </CardContent>
+                        </div>
+                        <CardTitle className="text-2xl text-white underline decoration-transparent transition group-hover:decoration-accent/60">
+                          {title}
+                        </CardTitle>
+                        <CardDescription className="text-sm text-muted-foreground">{description}</CardDescription>
+                      </CardHeader>
+                      <CardContent className="relative space-y-6">
+                        <div className="space-y-3">
+                          {bullets.map((item) => (
+                            <div key={item} className="flex items-start gap-3">
+                              <CheckCircle2 className="mt-1 h-5 w-5 text-accent" />
+                              <span className="text-sm text-muted-foreground">{item}</span>
+                            </div>
+                          ))}
+                        </div>
+                        <div className="flex flex-wrap gap-2">
+                          {badges.map((badge) => (
+                            <Badge key={badge} variant="secondary" className="border border-white/10 bg-white/5 text-xs text-muted-foreground">
+                              {badge}
+                            </Badge>
+                          ))}
+                        </div>
+                      </CardContent>
+                    </a>
                   </Card>
                 ))}
               </div>
