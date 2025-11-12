@@ -1,288 +1,466 @@
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Shield, Lock, Cloud, Brain, CheckCircle2, Mail } from "lucide-react";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Brain,
+  CheckCircle2,
+  Cloud,
+  Command,
+  Cpu,
+  Lock,
+  LucideIcon,
+  Mail,
+  Radar,
+  Shield,
+  SignalHigh,
+  Sparkles,
+} from "lucide-react";
 
 const Index = () => {
+  const productHighlights: {
+    title: string;
+    tag: string;
+    icon: LucideIcon;
+    accent: "accent" | "primary" | "glow";
+    description: string;
+    bullets: string[];
+    badges: string[];
+  }[] = [
+    {
+      title: "AI Governance Platform",
+      tag: "Responsible AI",
+      icon: Brain,
+      accent: "accent",
+      description: "Enterprise-grade governance framework for responsible AI adoption and compliance at scale.",
+      bullets: [
+        "Policy orchestration with automated guardrails and audit trails",
+        "Continuous risk scoring tuned to your regulatory landscape",
+        "Transparent decision intelligence for executive stakeholders",
+      ],
+      badges: ["AI/ML", "Compliance", "Enterprise"],
+    },
+    {
+      title: "bagsy.space",
+      tag: "SaaS Platform",
+      icon: Command,
+      accent: "primary",
+      description: "Modern collaboration OS for cross-functional teams operating in high-velocity environments.",
+      bullets: [
+        "Realtime occupancy intelligence and smart booking",
+        "Unified comms with context-aware notifications",
+        "Modular workspace APIs for internal tooling",
+      ],
+      badges: ["Collaboration", "Realtime", "SaaS"],
+    },
+  ];
+
+  const securityFocus = [
+    {
+      title: "Security Log Platform",
+      icon: Shield,
+      description: "Centralized security telemetry with AI-assisted anomaly detection and guided remediation.",
+      bullets: [
+        "Federated log ingestion with zero data drift",
+        "Adaptive detection powered by threat-informed ML",
+        "Regulator-ready reporting in one click",
+        "Native integrations across SIEM and SOAR ecosystems",
+      ],
+    },
+    {
+      title: "Cloud Security Posture",
+      icon: Cloud,
+      description: "Blueprints for cloud-native teams to deploy secure, compliant infrastructure from day zero.",
+      bullets: [
+        "Multi-cloud posture scoring tied to business risk",
+        "Misconfiguration prevention with policy-as-code",
+        "Continuous compliance with automated evidence",
+        "Actionable workflows mapped to engineering backlogs",
+      ],
+    },
+  ];
+
   return (
-    <div className="min-h-screen bg-background">
-      {/* Hero Section */}
-      <section className="relative overflow-hidden border-b border-border">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary-accent/5 via-transparent to-primary-glow/5" />
-        <div className="container mx-auto px-4 py-20 relative">
-          <div className="max-w-3xl">
-            <Badge className="mb-4" variant="secondary">
-              Product Portfolio
-            </Badge>
-            <h1 className="text-5xl font-bold mb-6 text-foreground">
-              Evan Wiley
-            </h1>
-            <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-              Security-focused product leader specializing in AI Governance, Cloud Security, 
-              and innovative SaaS solutions. Building products that make security accessible 
-              and AI deployments responsible.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <Button size="lg" className="shadow-lg">
-                <Mail className="mr-2 h-5 w-5" />
-                Get in Touch
-              </Button>
-              <Button size="lg" variant="outline">
-                View Projects
+    <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-background via-background/95 to-background/80 text-foreground">
+      <div className="pointer-events-none absolute inset-0 opacity-60">
+        <div className="absolute -top-40 left-1/2 h-[480px] w-[480px] -translate-x-1/2 rounded-full bg-primary/40 blur-3xl" />
+        <div className="absolute -bottom-32 right-8 h-72 w-72 rounded-full bg-accent/40 blur-3xl" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.06)_0,rgba(255,255,255,0)_55%)]" />
+      </div>
+
+      <div className="relative z-10">
+        <header className="border-b border-border/40 bg-background/70 backdrop-blur-xl">
+          <div className="container flex items-center justify-between gap-6 py-6">
+            <div className="flex items-center gap-3">
+              <span className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-background/60 shadow-[0_0_20px_rgba(120,86,255,0.35)]">
+                <Sparkles className="h-5 w-5 text-primary" />
+              </span>
+              <div>
+                <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground">Evan Wiley</p>
+                <p className="text-sm text-muted-foreground">Security Product Leader · AI Governance · Cloud</p>
+              </div>
+            </div>
+            <div className="hidden items-center gap-3 md:flex">
+              <Badge variant="secondary" className="bg-white/5 text-xs tracking-wider text-foreground">
+                Available for advisory & fractional leadership
+              </Badge>
+              <Button size="sm" variant="outline" className="border-white/20 bg-white/5 text-foreground hover:bg-white/10">
+                <Mail className="mr-2 h-4 w-4" />
+                Connect
               </Button>
             </div>
           </div>
-        </div>
-      </section>
+        </header>
 
-      {/* Products Section */}
-      <section className="container mx-auto px-4 py-16">
-        <div className="mb-12">
-          <h2 className="text-3xl font-bold mb-4 text-foreground">Products & Platforms</h2>
-          <p className="text-muted-foreground">
-            Enterprise-grade solutions for modern security and collaboration challenges
-          </p>
-        </div>
-        
-        <div className="grid md:grid-cols-2 gap-8 mb-16">
-          {/* AI Governance */}
-          <Card className="border-2 hover:border-primary-accent/50 transition-all duration-300 hover:shadow-xl">
-            <CardHeader>
-              <div className="flex items-start justify-between mb-4">
-                <div className="p-3 bg-primary-accent/10 rounded-lg">
-                  <Brain className="h-8 w-8 text-primary-accent" />
+        <main>
+          <section className="relative border-b border-border/40">
+            <div className="container grid gap-12 py-24 lg:grid-cols-[1.15fr_0.85fr]">
+              <div className="space-y-8">
+                <Badge variant="secondary" className="rounded-full border border-white/10 bg-white/5 px-4 py-1 text-xs uppercase tracking-[0.35em] text-muted-foreground">
+                  Product Portfolio
+                </Badge>
+                <div className="space-y-6">
+                  <h1 className="text-balance text-5xl font-semibold leading-tight text-white sm:text-6xl">
+                    Building trusted {""}
+                    <span className="bg-gradient-to-r from-accent via-primary to-primary-glow bg-clip-text text-transparent">
+                      security and AI platforms
+                    </span>{" "}
+                    for ambitious teams.
+                  </h1>
+                  <p className="max-w-2xl text-lg leading-relaxed text-muted-foreground">
+                    I translate complex governance and security problems into human-centered, revenue-driving products.
+                    From zero-to-one discovery to scaled expansion, I partner with engineering, GTM, and compliance teams
+                    to ship outcomes users trust.
+                  </p>
                 </div>
-                <Badge>AI Governance</Badge>
+                <div className="flex flex-wrap items-center gap-4">
+                  <Button size="lg" className="bg-gradient-to-r from-accent via-primary to-primary-glow text-primary-foreground shadow-[0_20px_45px_-20px_rgba(120,86,255,0.6)] transition hover:scale-[1.01]">
+                    <Mail className="mr-2 h-5 w-5" />
+                    Book a Strategy Session
+                  </Button>
+                  <Button size="lg" variant="outline" className="border-white/15 bg-white/5 text-foreground hover:bg-white/10">
+                    View Live Products
+                  </Button>
+                </div>
+                <div className="grid gap-6 sm:grid-cols-3">
+                  <Card className="border-white/10 bg-white/[0.04] backdrop-blur-md">
+                    <CardHeader className="pb-2">
+                      <CardTitle className="text-sm text-muted-foreground">SecOps Velocity</CardTitle>
+                    </CardHeader>
+                    <CardContent className="pt-0">
+                      <p className="text-3xl font-semibold text-white">86%</p>
+                      <p className="text-xs text-muted-foreground">Mean time to resolution reduction</p>
+                    </CardContent>
+                  </Card>
+                  <Card className="border-white/10 bg-white/[0.04] backdrop-blur-md">
+                    <CardHeader className="pb-2">
+                      <CardTitle className="text-sm text-muted-foreground">Governance Uplift</CardTitle>
+                    </CardHeader>
+                    <CardContent className="pt-0">
+                      <p className="text-3xl font-semibold text-white">3x</p>
+                      <p className="text-xs text-muted-foreground">Regulatory readiness acceleration</p>
+                    </CardContent>
+                  </Card>
+                  <Card className="border-white/10 bg-white/[0.04] backdrop-blur-md">
+                    <CardHeader className="pb-2">
+                      <CardTitle className="text-sm text-muted-foreground">Team Impact</CardTitle>
+                    </CardHeader>
+                    <CardContent className="pt-0">
+                      <p className="text-3xl font-semibold text-white">15+</p>
+                      <p className="text-xs text-muted-foreground">Security & AI launches shipped</p>
+                    </CardContent>
+                  </Card>
+                </div>
               </div>
-              <CardTitle className="text-2xl">AI Governance Platform</CardTitle>
-              <CardDescription className="text-base mt-2">
-                Enterprise-grade governance framework for responsible AI deployment and compliance
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-3 mb-6">
-                <div className="flex items-start gap-2">
-                  <CheckCircle2 className="h-5 w-5 text-primary-accent mt-0.5 flex-shrink-0" />
-                  <span className="text-sm text-muted-foreground">Policy enforcement and audit trails for AI models</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <CheckCircle2 className="h-5 w-5 text-primary-accent mt-0.5 flex-shrink-0" />
-                  <span className="text-sm text-muted-foreground">Risk assessment and compliance monitoring</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <CheckCircle2 className="h-5 w-5 text-primary-accent mt-0.5 flex-shrink-0" />
-                  <span className="text-sm text-muted-foreground">Ethical AI guidelines integration</span>
-                </div>
-              </div>
-              <div className="flex flex-wrap gap-2">
-                <Badge variant="secondary">AI/ML</Badge>
-                <Badge variant="secondary">Compliance</Badge>
-                <Badge variant="secondary">Enterprise</Badge>
-              </div>
-            </CardContent>
-          </Card>
 
-          {/* bagsy.space */}
-          <Card className="border-2 hover:border-primary-accent/50 transition-all duration-300 hover:shadow-xl">
-            <CardHeader>
-              <div className="flex items-start justify-between mb-4">
-                <div className="p-3 bg-primary-glow/10 rounded-lg">
-                  <CheckCircle2 className="h-8 w-8 text-primary-glow" />
-                </div>
-                <Badge variant="secondary">SaaS Platform</Badge>
+              <div className="relative">
+                <div className="absolute inset-0 -translate-y-4 rounded-3xl border border-white/10 bg-gradient-to-br from-white/8 via-white/0 to-white/5 blur-lg" />
+                <Card className="relative h-full border-white/10 bg-white/[0.05] shadow-[0_25px_55px_-30px_rgba(120,86,255,0.65)] backdrop-blur-lg">
+                  <CardHeader className="space-y-4">
+                    <div className="flex items-center gap-3">
+                      <span className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-white/5">
+                        <Cpu className="h-5 w-5 text-accent" />
+                      </span>
+                      <div>
+                        <p className="text-xs uppercase tracking-[0.35em] text-muted-foreground">Now Shipping</p>
+                        <CardTitle className="text-xl text-white">AI Trust Console</CardTitle>
+                      </div>
+                    </div>
+                    <CardDescription className="text-sm text-muted-foreground">
+                      Responsible AI dashboard unifying governance workflows, runtime telemetry, and executive-ready reporting.
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="space-y-5">
+                    <div className="grid gap-3">
+                      {[
+                        { label: "Launch Stage", value: "Growth · Series B+" },
+                        { label: "My Role", value: "Head of Product, AI Governance" },
+                        { label: "Key Metric", value: "NPS +41 within 2 quarters" },
+                      ].map((item) => (
+                        <div key={item.label} className="flex items-center justify-between rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3">
+                          <span className="text-xs uppercase tracking-wide text-muted-foreground">{item.label}</span>
+                          <span className="text-sm font-medium text-white">{item.value}</span>
+                        </div>
+                      ))}
+                    </div>
+                    <div className="flex items-center justify-between rounded-2xl border border-accent/40 bg-accent/10 p-4">
+                      <div>
+                        <p className="text-xs uppercase tracking-[0.3em] text-accent">Signal</p>
+                        <p className="text-sm text-muted-foreground">Coverage across compliance, risk, and engineering</p>
+                      </div>
+                      <SignalHigh className="h-8 w-8 text-accent" />
+                    </div>
+                  </CardContent>
+                </Card>
               </div>
-              <CardTitle className="text-2xl">bagsy.space</CardTitle>
-              <CardDescription className="text-base mt-2">
-                Collaborative workspace solution for modern teams with real-time coordination
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-3 mb-6">
-                <div className="flex items-start gap-2">
-                  <CheckCircle2 className="h-5 w-5 text-primary-glow mt-0.5 flex-shrink-0" />
-                  <span className="text-sm text-muted-foreground">Real-time collaboration and resource management</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <CheckCircle2 className="h-5 w-5 text-primary-glow mt-0.5 flex-shrink-0" />
-                  <span className="text-sm text-muted-foreground">Intuitive booking and scheduling system</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <CheckCircle2 className="h-5 w-5 text-primary-glow mt-0.5 flex-shrink-0" />
-                  <span className="text-sm text-muted-foreground">Team coordination tools</span>
-                </div>
-              </div>
-              <div className="flex flex-wrap gap-2">
-                <Badge variant="secondary">Collaboration</Badge>
-                <Badge variant="secondary">Real-time</Badge>
-                <Badge variant="secondary">SaaS</Badge>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
+            </div>
+          </section>
 
-      {/* Security Experience Section */}
-      <section className="bg-muted/30 border-y border-border">
-        <div className="container mx-auto px-4 py-16">
-          <div className="mb-12">
-            <h2 className="text-3xl font-bold mb-4 text-foreground">Security Expertise</h2>
-            <p className="text-muted-foreground">
-              Deep security experience across logging, monitoring, and cloud security posture management
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* Security Log Platform */}
-            <Card>
-              <CardHeader>
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="p-2 bg-destructive/10 rounded-lg">
-                    <Shield className="h-6 w-6 text-destructive" />
-                  </div>
-                  <CardTitle>Security Log Platform</CardTitle>
+          <section className="border-b border-border/40 py-20">
+            <div className="container space-y-12">
+              <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+                <div className="max-w-2xl space-y-4">
+                  <Badge variant="secondary" className="border border-white/10 bg-white/5 uppercase tracking-[0.35em] text-xs text-muted-foreground">
+                    Products & Platforms
+                  </Badge>
+                  <h2 className="text-3xl font-semibold text-white sm:text-4xl">Secure experiences engineered for velocity</h2>
+                  <p className="text-base text-muted-foreground">
+                    Designed to scale from scrappy pilot teams to global enterprises, each platform blends robust security with an experience-first product mindset.
+                  </p>
                 </div>
-                <CardDescription>
-                  Centralized security event monitoring and threat detection system
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2 text-sm text-muted-foreground">
-                  <li className="flex items-start gap-2">
-                    <span className="text-destructive mt-1">•</span>
-                    <span>Real-time security event aggregation and analysis</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-destructive mt-1">•</span>
-                    <span>Automated threat detection and alerting</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-destructive mt-1">•</span>
-                    <span>Compliance reporting and audit trail management</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-destructive mt-1">•</span>
-                    <span>Integration with SIEM and security tools</span>
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
-
-            {/* Cloud Security */}
-            <Card>
-              <CardHeader>
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="p-2 bg-primary-accent/10 rounded-lg">
-                    <Cloud className="h-6 w-6 text-primary-accent" />
-                  </div>
-                  <CardTitle>Cloud Security Posture Management</CardTitle>
-                </div>
-                <CardDescription>
-                  Continuous cloud security assessment and remediation
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2 text-sm text-muted-foreground">
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary-accent mt-1">•</span>
-                    <span>Multi-cloud security posture assessment</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary-accent mt-1">•</span>
-                    <span>Automated misconfiguration detection</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary-accent mt-1">•</span>
-                    <span>Policy-as-code enforcement</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary-accent mt-1">•</span>
-                    <span>Continuous compliance monitoring</span>
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* AI Consultancy Section */}
-      <section className="container mx-auto px-4 py-16">
-        <div className="max-w-4xl mx-auto">
-          <Card className="border-2 border-primary-accent/30 bg-gradient-to-br from-primary-accent/5 to-primary-glow/5">
-            <CardHeader className="text-center pb-4">
-              <div className="flex justify-center mb-4">
-                <div className="p-4 bg-primary-accent/10 rounded-full">
-                  <Brain className="h-10 w-10 text-primary-accent" />
+                <div className="flex items-center gap-3">
+                  <Radar className="h-6 w-6 text-accent" />
+                  <p className="text-xs uppercase tracking-[0.35em] text-muted-foreground">Signal Strength · Verified</p>
                 </div>
               </div>
-              <CardTitle className="text-3xl mb-2">AI Consultancy Services</CardTitle>
-              <CardDescription className="text-base">
-                Available for strategic AI advisory and implementation projects
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <h4 className="font-semibold mb-3 flex items-center gap-2 text-foreground">
-                    <Lock className="h-5 w-5 text-primary-accent" />
-                    Strategy & Governance
-                  </h4>
-                  <ul className="space-y-2 text-sm text-muted-foreground">
-                    <li>• AI strategy and roadmap development</li>
-                    <li>• Governance framework design</li>
-                    <li>• Risk assessment and mitigation</li>
-                    <li>• Compliance and ethical AI guidelines</li>
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="font-semibold mb-3 flex items-center gap-2 text-foreground">
-                    <Shield className="h-5 w-5 text-primary-accent" />
-                    Security & Implementation
-                  </h4>
-                  <ul className="space-y-2 text-sm text-muted-foreground">
-                    <li>• Secure AI deployment practices</li>
-                    <li>• Model security and privacy</li>
-                    <li>• Integration with existing systems</li>
-                    <li>• Training and enablement</li>
-                  </ul>
-                </div>
+
+              <div className="grid gap-8 lg:grid-cols-2">
+                {productHighlights.map(({ title, tag, icon: Icon, accent, description, bullets, badges }) => (
+                  <Card
+                    key={title}
+                    className="group relative border-white/10 bg-white/[0.04] transition-all duration-500 hover:-translate-y-1 hover:border-accent/50 hover:shadow-[0_25px_55px_-30px_rgba(120,86,255,0.55)]"
+                  >
+                    <div className="absolute -inset-px rounded-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                      <div className="h-full w-full rounded-3xl bg-gradient-to-br from-accent/20 via-transparent to-primary/30 blur-[32px]" />
+                    </div>
+                    <CardHeader className="relative">
+                      <div className="flex items-start justify-between gap-6">
+                        <div className="inline-flex rounded-2xl border border-white/10 bg-white/[0.06] p-3">
+                          <Icon
+                            className={`h-7 w-7 ${
+                              accent === "accent" ? "text-accent" : accent === "primary" ? "text-primary" : "text-primary-glow"
+                            }`}
+                          />
+                        </div>
+                        <Badge variant="secondary" className="border border-white/15 bg-white/10 text-xs uppercase tracking-[0.25em] text-muted-foreground">
+                          {tag}
+                        </Badge>
+                      </div>
+                      <CardTitle className="text-2xl text-white">{title}</CardTitle>
+                      <CardDescription className="text-sm text-muted-foreground">{description}</CardDescription>
+                    </CardHeader>
+                    <CardContent className="relative space-y-6">
+                      <div className="space-y-3">
+                        {bullets.map((item) => (
+                          <div key={item} className="flex items-start gap-3">
+                            <CheckCircle2 className="mt-1 h-5 w-5 text-accent" />
+                            <span className="text-sm text-muted-foreground">{item}</span>
+                          </div>
+                        ))}
+                      </div>
+                      <div className="flex flex-wrap gap-2">
+                        {badges.map((badge) => (
+                          <Badge key={badge} variant="secondary" className="border border-white/10 bg-white/5 text-xs text-muted-foreground">
+                            {badge}
+                          </Badge>
+                        ))}
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
               </div>
-              
-              <div className="pt-4 border-t border-border text-center">
-                <p className="text-muted-foreground mb-4">
-                  Looking for expert guidance on AI adoption, security, or governance?
+            </div>
+          </section>
+
+          <section className="border-b border-border/40 bg-white/[0.03] py-20 backdrop-blur-xl">
+            <div className="container space-y-12">
+              <div className="max-w-3xl space-y-4">
+                <Badge variant="secondary" className="border border-white/10 bg-white/5 uppercase tracking-[0.35em] text-xs text-muted-foreground">
+                  Security Craft
+                </Badge>
+                <h2 className="text-3xl font-semibold text-white sm:text-4xl">Full-spectrum security experience</h2>
+                <p className="text-base text-muted-foreground">
+                  I build operating models that harmonize product velocity with the rigor of enterprise security. From data
+                  pipelines to customer trust, every layer is intentional.
                 </p>
-                <Button size="lg" className="shadow-lg">
-                  <Mail className="mr-2 h-5 w-5" />
-                  Discuss Your Project
-                </Button>
               </div>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
 
-      {/* Footer */}
-      <footer className="border-t border-border bg-muted/30">
-        <div className="container mx-auto px-4 py-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-muted-foreground">
-              © 2024 Evan Wiley. All rights reserved.
-            </p>
-            <div className="flex gap-6">
-              <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+              <div className="grid gap-8 lg:grid-cols-2">
+                {securityFocus.map(({ title, icon: Icon, description, bullets }) => (
+                  <Card key={title} className="border-white/10 bg-white/[0.04] backdrop-blur-lg">
+                    <CardHeader>
+                      <div className="flex items-center gap-4">
+                        <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.06]">
+                          <Icon className="h-6 w-6 text-primary" />
+                        </div>
+                        <div>
+                          <CardTitle className="text-xl text-white">{title}</CardTitle>
+                          <CardDescription className="text-xs uppercase tracking-[0.3em] text-muted-foreground">
+                            Security Product Strategy
+                          </CardDescription>
+                        </div>
+                      </div>
+                      <CardDescription className="pt-3 text-sm text-muted-foreground">{description}</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <ul className="space-y-3 text-sm text-muted-foreground">
+                        {bullets.map((item) => (
+                          <li key={item} className="flex items-start gap-3">
+                            <span className="mt-1 h-1.5 w-1.5 rounded-full bg-accent" />
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          <section className="py-20">
+            <div className="container grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-start">
+              <div className="space-y-8">
+                <Badge variant="secondary" className="border border-white/10 bg-white/5 uppercase tracking-[0.35em] text-xs text-muted-foreground">
+                  Advisory Services
+                </Badge>
+                <Card className="border-accent/30 bg-gradient-to-br from-accent/15 via-transparent to-primary/20 shadow-[0_25px_65px_-35px_rgba(64,207,255,0.6)] backdrop-blur-xl">
+                  <CardHeader className="space-y-4 text-center">
+                    <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full border border-white/20 bg-white/10">
+                      <Brain className="h-7 w-7 text-accent" />
+                    </div>
+                    <CardTitle className="text-3xl text-white">AI Consultancy Services</CardTitle>
+                    <CardDescription className="text-base text-muted-foreground">
+                      Strategic partnerships for executives who need responsible AI and security initiatives to ship faster with conviction.
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="space-y-6">
+                    <div className="grid gap-6 sm:grid-cols-2">
+                      <div className="rounded-2xl border border-white/15 bg-white/5 p-5 text-left">
+                        <h4 className="mb-3 flex items-center gap-2 text-sm font-semibold text-white">
+                          <Lock className="h-4 w-4 text-accent" />
+                          Strategy & Governance
+                        </h4>
+                        <ul className="space-y-2 text-sm text-muted-foreground">
+                          <li>• AI roadmaps and value articulation</li>
+                          <li>• Governance framework design</li>
+                          <li>• Risk modeling & mitigation</li>
+                          <li>• Regulatory readiness</li>
+                        </ul>
+                      </div>
+                      <div className="rounded-2xl border border-white/15 bg-white/5 p-5 text-left">
+                        <h4 className="mb-3 flex items-center gap-2 text-sm font-semibold text-white">
+                          <Shield className="h-4 w-4 text-accent" />
+                          Security & Delivery
+                        </h4>
+                        <ul className="space-y-2 text-sm text-muted-foreground">
+                          <li>• Secure ML pipeline design</li>
+                          <li>• Privacy and model safeguards</li>
+                          <li>• GTM & customer onboarding</li>
+                          <li>• Team enablement programs</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div className="rounded-2xl border border-white/20 bg-white/10 p-6 text-center">
+                      <p className="text-sm text-muted-foreground">
+                        Ready to align product velocity with governance rigor? Let’s architect a roadmap designed for your stage.
+                      </p>
+                      <Button size="lg" className="mt-5 bg-white text-background hover:bg-white/90">
+                        <Mail className="mr-2 h-5 w-5" />
+                        Discuss Your Project
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+
+              <div className="space-y-6">
+                <Card className="border-white/10 bg-white/[0.04] backdrop-blur-xl">
+                  <CardHeader>
+                    <div className="flex items-center gap-3">
+                      <Sparkles className="h-5 w-5 text-accent" />
+                      <CardTitle className="text-lg text-white">Selected Signals</CardTitle>
+                    </div>
+                    <CardDescription className="text-sm text-muted-foreground">
+                      Themes and outputs I focus on when partnering with technical founders and CISOs.
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="space-y-4 text-sm text-muted-foreground">
+                    <div className="rounded-xl border border-white/10 bg-white/5 p-4">
+                      <p className="text-xs uppercase tracking-[0.35em] text-muted-foreground/80">Trust Design</p>
+                      <p className="mt-2 text-muted-foreground">
+                        Weaving security and compliance narratives directly into user journeys to build credibility from first touch.
+                      </p>
+                    </div>
+                    <div className="rounded-xl border border-white/10 bg-white/5 p-4">
+                      <p className="text-xs uppercase tracking-[0.35em] text-muted-foreground/80">Data-Informed velocity</p>
+                      <p className="mt-2 text-muted-foreground">
+                        Instrumenting product discovery and usage analytics so product bets stay tethered to signal-rich feedback loops.
+                      </p>
+                    </div>
+                    <div className="rounded-xl border border-white/10 bg-white/5 p-4">
+                      <p className="text-xs uppercase tracking-[0.35em] text-muted-foreground/80">Modern GTM</p>
+                      <p className="mt-2 text-muted-foreground">
+                        Aligning security, product marketing, and customer success to tell a unified story that resonates with technical buyers.
+                      </p>
+                    </div>
+                  </CardContent>
+                </Card>
+                <Card className="border-white/10 bg-white/[0.04] backdrop-blur-xl">
+                  <CardHeader>
+                    <div className="flex items-center gap-3">
+                      <Cpu className="h-5 w-5 text-primary" />
+                      <CardTitle className="text-lg text-white">Tooling DNA</CardTitle>
+                    </div>
+                    <CardDescription className="text-sm text-muted-foreground">
+                      Operator-level familiarity with the stacks modern data, security, and product teams rely on.
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="grid gap-3 sm:grid-cols-2">
+                    {["Snowflake", "Databricks", "Netskope", "Snyk", "Vanta", "Notion", "Linear", "Mode"].map((tool) => (
+                      <div key={tool} className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-muted-foreground">
+                        {tool}
+                      </div>
+                    ))}
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+          </section>
+        </main>
+
+        <footer className="border-t border-border/40 bg-background/60 py-10 backdrop-blur-xl">
+          <div className="container flex flex-col items-center justify-between gap-6 text-center md:flex-row md:text-left">
+            <div>
+              <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground">Evan Wiley</p>
+              <p className="mt-2 text-sm text-muted-foreground">
+                Fractional product leadership for AI, security, and compliance-forward teams.
+              </p>
+            </div>
+            <div className="flex flex-wrap items-center justify-center gap-4 text-sm text-muted-foreground">
+              <a href="#" className="transition hover:text-white">
                 LinkedIn
               </a>
-              <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+              <a href="#" className="transition hover:text-white">
                 GitHub
               </a>
-              <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+              <a href="#" className="transition hover:text-white">
                 Contact
               </a>
             </div>
+            <p className="text-xs text-muted-foreground/80">© {new Date().getFullYear()} Evan Wiley. All rights reserved.</p>
           </div>
-        </div>
-      </footer>
+        </footer>
+      </div>
     </div>
   );
 };
