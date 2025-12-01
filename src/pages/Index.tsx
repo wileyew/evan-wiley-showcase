@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import {
   Brain,
   CheckCircle2,
@@ -10,11 +11,14 @@ import {
   Lock,
   LucideIcon,
   Mail,
+  Menu,
   Radar,
   ScanFace,
   Shield,
   Sparkles,
+  Globe,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Index = () => {
   const productHighlights: {
@@ -92,8 +96,8 @@ const Index = () => {
 
       <div className="relative z-10">
         <header className="border-b border-border/40 bg-background/70 backdrop-blur-xl">
-          <div className="container flex items-center justify-between gap-6 py-6">
-            <div className="flex items-center gap-3">
+          <div className="container flex items-center justify-between gap-6 py-3">
+            <Link to="/" className="flex items-center gap-3">
               <span className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-background/60 shadow-[0_0_20px_rgba(120,86,255,0.35)]">
                 <Sparkles className="h-5 w-5 text-primary" />
               </span>
@@ -101,8 +105,34 @@ const Index = () => {
                 <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground">Evan Wiley</p>
                 <p className="text-sm text-muted-foreground">Security Product Leader · AI Governance · Cloud</p>
               </div>
-            </div>
-            <div className="hidden items-center gap-4 md:flex">
+            </Link>
+            <div className="flex items-center gap-4">
+              <Sheet>
+                <SheetTrigger asChild>
+                  <Button variant="outline" size="sm" className="border-white/20 bg-white/5 text-foreground hover:bg-white/10 md:hidden">
+                    <Menu className="h-4 w-4" />
+                  </Button>
+                </SheetTrigger>
+                <SheetContent side="right" className="w-[300px] border-border/40 bg-background/95 backdrop-blur-xl">
+                  <nav className="mt-8 flex flex-col gap-4">
+                    <Link
+                      to="/"
+                      className="rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-left transition hover:bg-white/10"
+                    >
+                      <p className="text-sm font-medium text-white">Consulting Experience</p>
+                      <p className="text-xs text-muted-foreground">AI consultancy services and client work</p>
+                    </Link>
+                    <Link
+                      to="/work-experience"
+                      className="rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-left transition hover:bg-white/10"
+                    >
+                      <p className="text-sm font-medium text-white">Work Experience</p>
+                      <p className="text-xs text-muted-foreground">Enterprise security and AI leadership</p>
+                    </Link>
+                  </nav>
+                </SheetContent>
+              </Sheet>
+              <div className="hidden items-center gap-4 md:flex">
               <div className="flex flex-col gap-3">
                 <div className="flex items-center gap-3 rounded-2xl border border-accent/40 bg-accent/10 px-4 py-3 text-left shadow-[0_18px_40px_-28px_rgba(64,207,255,0.7)]">
                   <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-accent/50 bg-background/70">
@@ -131,6 +161,7 @@ const Index = () => {
                   </div>
                 </a>
               </div>
+              </div>
               <Button size="sm" variant="outline" className="border-white/20 bg-white/5 text-foreground hover:bg-white/10">
                 <Mail className="mr-2 h-4 w-4" />
                 Connect
@@ -155,15 +186,14 @@ const Index = () => {
                     for ambitious teams.
                   </h1>
                   <p className="max-w-2xl text-lg leading-relaxed text-muted-foreground">
-                    I translate complex governance and security problems into human-centered, revenue-driving products.
-                    From zero-to-one discovery to scaled expansion, I partner with engineering, GTM, and compliance teams
-                    to ship outcomes users trust.
+                    Translating complex governance and security challenges into human-centered, revenue-driving products.
+                    Partnering with engineering, GTM, and compliance teams to ship trusted outcomes.
                   </p>
                   <p className="max-w-xl text-sm uppercase tracking-[0.32em] text-muted-foreground/80">
                     <a href="https://bagsy.space" target="_blank" rel="noreferrer" className="text-primary underline decoration-primary/40 underline-offset-4 transition hover:text-primary/80 hover:decoration-primary/60">
                       bagsy.space
                     </a>{" "}
-                    emerged during tech layoffs—reimagining driveways as semi-passive income streams for resilient operators.
+                    — reimagining driveways as semi-passive income streams.
                   </p>
                 </div>
                 <div className="flex flex-wrap items-center gap-4">
@@ -209,63 +239,9 @@ const Index = () => {
               <div className="relative flex flex-col gap-6">
                 <Card className="border-white/10 bg-white/[0.04] backdrop-blur-md">
                   <CardHeader className="pb-3">
-                    <div className="flex items-center gap-3">
-                      <Sparkles className="h-5 w-5 text-accent" />
-                      <CardTitle className="text-lg text-white">Career Impact</CardTitle>
-                    </div>
-                    <CardDescription className="text-sm text-muted-foreground">
-                      Outcomes from leading AI security and log intelligence products.
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent className="space-y-4 text-sm text-muted-foreground">
-                    <div className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/5 p-4 leading-relaxed">
-                      <CheckCircle2 className="mt-1 h-5 w-5 text-accent" />
-                      <span>Spearheaded AI-modeled threat detection vision and strategy, elevating security posture across the Salesforce ecosystem.</span>
-                    </div>
-                    <div className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/5 p-4 leading-relaxed">
-                      <CheckCircle2 className="mt-1 h-5 w-5 text-accent" />
-                      <span>Drove initiatives that unlocked $300M+ ACV by strengthening customer trust through actionable threat detection.</span>
-                    </div>
-                    <div className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/5 p-4 leading-relaxed">
-                      <CheckCircle2 className="mt-1 h-5 w-5 text-accent" />
-                      <span>Operationalized an enterprise log management platform, enabling rapid search and investigation of potential incidents.</span>
-              </div>
-            </CardContent>
-          </Card>
-                <Card className="border-white/10 bg-white/[0.04] backdrop-blur-md">
-                  <CardHeader className="pb-3">
-                    <div className="flex items-center gap-3">
-                      <Cloud className="h-5 w-5 text-primary" />
-                      <CardTitle className="text-lg text-white">Cloud Security Wins</CardTitle>
-                    </div>
-                    <CardDescription className="text-sm text-muted-foreground">
-                      Scaling governance and protection across hyperscale environments.
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent className="space-y-4 text-sm text-muted-foreground">
-                    <div className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/5 p-4 leading-relaxed">
-                      <CheckCircle2 className="mt-1 h-5 w-5 text-accent" />
-                      <span>Led migration of CSPM platforms spanning 10k+ Salesforce public cloud accounts to expand multi-cloud misconfiguration coverage.</span>
-                    </div>
-                    <div className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/5 p-4 leading-relaxed">
-                      <CheckCircle2 className="mt-1 h-5 w-5 text-accent" />
-                      <span>Program-managed security launches for Gov Cloud, unlocking $900M+ in annual order value.</span>
-                    </div>
-                    <div className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/5 p-4 leading-relaxed">
-                      <CheckCircle2 className="mt-1 h-5 w-5 text-accent" />
-                      <span>Directed retail and consumer goods security programs driving $200M+ in annual order value.</span>
-                    </div>
-                    <div className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/5 p-4 leading-relaxed">
-                      <CheckCircle2 className="mt-1 h-5 w-5 text-accent" />
-                      <span>Deployed policy guardrails to blunt external and insider threats before exploit paths materialized.</span>
-                    </div>
-                  </CardContent>
-                </Card>
-                <Card className="border-white/10 bg-white/[0.04] backdrop-blur-md">
-                  <CardHeader className="pb-3">
                     <CardTitle className="text-lg text-white">Operator Principles</CardTitle>
                     <CardDescription className="text-sm text-muted-foreground">
-                      Grounding beliefs from shipping governance, security, and sustainability products.
+                      Core beliefs from shipping governance, security, and sustainability products.
                     </CardDescription>
                   </CardHeader>
                   <CardContent className="space-y-4 text-sm text-muted-foreground">
@@ -293,7 +269,7 @@ const Index = () => {
                   </Badge>
                   <h2 className="text-3xl font-semibold text-white sm:text-4xl">Secure experiences engineered for velocity</h2>
                   <p className="text-base text-muted-foreground">
-                    Designed to scale from scrappy pilot teams to global enterprises, each platform blends robust security with an experience-first product mindset.
+                    Platforms that scale from pilot teams to enterprises, blending robust security with experience-first design.
                   </p>
                 </div>
                 <div className="flex items-center gap-3">
@@ -367,8 +343,7 @@ const Index = () => {
                 </Badge>
                 <h2 className="text-3xl font-semibold text-white sm:text-4xl">Full-spectrum security experience</h2>
                 <p className="text-base text-muted-foreground">
-                  I build operating models that harmonize product velocity with the rigor of enterprise security. From data
-                  pipelines to customer trust, every layer is intentional.
+                  Operating models that harmonize product velocity with enterprise security rigor. Every layer is intentional.
             </p>
           </div>
           
@@ -409,8 +384,34 @@ const Index = () => {
             <div className="container grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-start">
               <div className="space-y-8">
                 <Badge variant="secondary" className="border border-white/10 bg-white/5 uppercase tracking-[0.35em] text-xs text-muted-foreground">
-                  Advisory Services
+                  Consulting Practice
                 </Badge>
+                <Card className="border-white/10 bg-white/[0.04] backdrop-blur-md">
+                  <CardHeader className="pb-3">
+                    <div className="flex items-center gap-3">
+                      <Globe className="h-5 w-5 text-accent" />
+                      <CardTitle className="text-lg text-white">Client Work</CardTitle>
+                    </div>
+                    <CardDescription className="text-sm text-muted-foreground">
+                      Websites and digital solutions for growing businesses.
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    <a
+                      href="https://kentsgardenllc.com"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/5 p-4 leading-relaxed transition hover:border-accent/50 hover:bg-white/10"
+                    >
+                      <CheckCircle2 className="mt-1 h-5 w-5 text-accent" />
+                      <div className="flex-1">
+                        <p className="text-sm font-medium text-white">Kent's Garden LLC</p>
+                        <p className="text-xs text-muted-foreground mt-1">Landscaping business website</p>
+                        <p className="text-sm text-muted-foreground mt-2">Built a modern, responsive website for a local landscaping company, showcasing services and enabling customer inquiries.</p>
+                      </div>
+                    </a>
+                  </CardContent>
+                </Card>
                 <Card className="border-accent/30 bg-gradient-to-br from-accent/15 via-transparent to-primary/20 shadow-[0_25px_65px_-35px_rgba(64,207,255,0.6)] backdrop-blur-xl">
                   <CardHeader className="space-y-4 text-center">
                     <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full border border-white/20 bg-white/10">
@@ -418,7 +419,7 @@ const Index = () => {
                 </div>
                     <CardTitle className="text-3xl text-white">AI Consultancy Services</CardTitle>
                     <CardDescription className="text-base text-muted-foreground">
-                      Strategic partnerships for executives who need responsible AI and security initiatives to ship faster with conviction.
+                      Strategic partnerships for executives shipping responsible AI and security initiatives faster.
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
@@ -450,7 +451,7 @@ const Index = () => {
               </div>
                     <div className="rounded-2xl border border-white/20 bg-white/10 p-6 text-center">
                       <p className="text-sm text-muted-foreground">
-                        Ready to align product velocity with governance rigor? Let’s architect a roadmap designed for your stage.
+                        Ready to align product velocity with governance rigor? Let's architect a roadmap for your stage.
                       </p>
                       <Button size="lg" className="mt-5 bg-white text-background hover:bg-white/90">
                   <Mail className="mr-2 h-5 w-5" />
@@ -469,26 +470,26 @@ const Index = () => {
                       <CardTitle className="text-lg text-white">Selected Signals</CardTitle>
                     </div>
                     <CardDescription className="text-sm text-muted-foreground">
-                      Themes and outputs I focus on when partnering with technical founders and CISOs.
+                      Themes I focus on when partnering with technical founders and CISOs.
                     </CardDescription>
                   </CardHeader>
                   <CardContent className="space-y-4 text-sm text-muted-foreground">
                     <div className="rounded-xl border border-white/10 bg-white/5 p-4">
                       <p className="text-xs uppercase tracking-[0.35em] text-muted-foreground/80">Trust Design</p>
                       <p className="mt-2 text-muted-foreground">
-                        Weaving security and compliance narratives directly into user journeys to build credibility from first touch.
+                        Weaving security and compliance narratives into user journeys to build credibility from first touch.
                       </p>
                     </div>
                     <div className="rounded-xl border border-white/10 bg-white/5 p-4">
                       <p className="text-xs uppercase tracking-[0.35em] text-muted-foreground/80">Data-Informed velocity</p>
                       <p className="mt-2 text-muted-foreground">
-                        Instrumenting product discovery and usage analytics so product bets stay tethered to signal-rich feedback loops.
+                        Instrumenting product discovery and analytics so bets stay tethered to signal-rich feedback loops.
                       </p>
                     </div>
                     <div className="rounded-xl border border-white/10 bg-white/5 p-4">
                       <p className="text-xs uppercase tracking-[0.35em] text-muted-foreground/80">Modern GTM</p>
                       <p className="mt-2 text-muted-foreground">
-                        Aligning security, product marketing, and customer success to tell a unified story that resonates with technical buyers.
+                        Aligning security, product marketing, and customer success to tell a unified story for technical buyers.
                       </p>
                     </div>
                   </CardContent>
