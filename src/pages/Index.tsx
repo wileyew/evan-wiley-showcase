@@ -99,8 +99,8 @@ const Index = () => {
             <Link to="/" className="flex items-center gap-3">
               <img 
                 src="/logo.svg" 
-                alt="walkerwiley.com" 
-                className="h-12 w-auto"
+                alt="walkerwiley Professional Services" 
+                className="h-16 w-auto"
               />
             </Link>
             <div className="flex items-center gap-4">
@@ -137,7 +137,7 @@ const Index = () => {
                   </span>
                   <div>
                     <p className="text-[11px] uppercase tracking-[0.45em] text-accent/80">Now Shipping</p>
-                    <p className="text-sm font-medium text-white">Veridex · Deepfake Identifier</p>
+                    <p className="text-sm font-medium text-white">Phantom Trace · Deepfake Identifier</p>
                   </div>
                 </div>
                 <a

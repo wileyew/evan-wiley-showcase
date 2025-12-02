@@ -18,7 +18,7 @@ const WorkExperience = () => {
             <Link to="/" className="flex items-center gap-3">
               <img 
                 src="/logo.svg" 
-                alt="walkerwiley.com" 
+                alt="walkerwiley Professional Services" 
                 className="h-12 w-auto"
               />
             </Link>
