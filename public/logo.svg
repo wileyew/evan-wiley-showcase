@@ -1,0 +1,15 @@
+<svg width="120" height="140" viewBox="0 0 120 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Shield with integrated W -->
+  <path d="M60 10 L20 25 L20 70 Q20 90 30 105 Q40 120 60 130 Q80 120 100 105 Q110 90 110 70 L110 25 Z" fill="#1E3A5F" stroke="#1E3A5F" stroke-width="2"/>
+  <!-- W letter - left vertical and center V in gold/bronze -->
+  <path d="M30 50 L30 90 L48 70 L60 85 L72 70 L90 90 L90 50 L72 50 L72 68 L60 55 L48 68 L48 50 Z" fill="#D4AF37"/>
+  <!-- Right vertical stroke of W in navy -->
+  <path d="M90 50 L90 90 L100 90 L100 50 Z" fill="#1E3A5F"/>
+  <!-- Top-right accent of shield in gold -->
+  <path d="M90 25 L110 25 L110 35 L95 35 Z" fill="#D4AF37"/>
+  <!-- Text: walkerwiley -->
+  <text x="60" y="110" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600" fill="#1E3A5F" text-anchor="middle" letter-spacing="0.5px">walkerwiley</text>
+  <!-- Text: .com -->
+  <text x="60" y="128" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#D4AF37" text-anchor="middle" letter-spacing="0.5px">.com</text>
+</svg>
+

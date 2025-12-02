@@ -1,6 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { CheckCircle2, Cloud, Sparkles } from "lucide-react";
+import { CheckCircle2, Cloud, Brain } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const WorkExperience = () => {
@@ -16,13 +16,11 @@ const WorkExperience = () => {
         <header className="border-b border-border/40 bg-background/70 backdrop-blur-xl">
           <div className="container flex items-center justify-between gap-6 py-3">
             <Link to="/" className="flex items-center gap-3">
-              <span className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-background/60 shadow-[0_0_20px_rgba(120,86,255,0.35)]">
-                <Sparkles className="h-5 w-5 text-primary" />
-              </span>
-              <div>
-                <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground">Evan Wiley</p>
-                <p className="text-sm text-muted-foreground">Security Product Leader · AI Governance · Cloud</p>
-              </div>
+              <img 
+                src="/logo.svg" 
+                alt="walkerwiley.com" 
+                className="h-12 w-auto"
+              />
             </Link>
           </div>
         </header>
@@ -43,7 +41,7 @@ const WorkExperience = () => {
                 <Card className="border-white/10 bg-white/[0.04] backdrop-blur-md">
                   <CardHeader className="pb-3">
                     <div className="flex items-center gap-3">
-                      <Sparkles className="h-5 w-5 text-accent" />
+                      <Brain className="h-5 w-5 text-accent" />
                       <CardTitle className="text-lg text-white">AI Security & Threat Detection</CardTitle>
                     </div>
                     <CardDescription className="text-sm text-muted-foreground">
