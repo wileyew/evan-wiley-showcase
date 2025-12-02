@@ -19,9 +19,23 @@ const WorkExperience = () => {
               <img 
                 src="/logo.svg" 
                 alt="walkerwiley Professional Services" 
-                className="h-12 w-auto"
+                className="h-16 w-auto"
               />
             </Link>
+            <nav className="hidden items-center gap-6 md:flex">
+              <Link
+                to="/"
+                className="text-sm font-medium text-foreground transition hover:text-white"
+              >
+                Home
+              </Link>
+              <Link
+                to="/work-experience"
+                className="text-sm font-medium text-foreground transition hover:text-white"
+              >
+                Work Experience
+              </Link>
+            </nav>
           </div>
         </header>
 
