@@ -30,6 +30,12 @@ const WorkExperience = () => {
                 Home
               </Link>
               <Link
+                to="/consultancy-experience"
+                className="text-sm font-medium text-foreground transition hover:text-white"
+              >
+                Consultancy Experience
+              </Link>
+              <Link
                 to="/work-experience"
                 className="text-sm font-medium text-foreground transition hover:text-white"
               >

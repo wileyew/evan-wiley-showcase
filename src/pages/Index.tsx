@@ -50,6 +50,13 @@ const Index = () => {
                       <p className="text-xs text-muted-foreground">Product manager consultancy services</p>
                     </Link>
                     <Link
+                      to="/consultancy-experience"
+                      className="rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-left transition hover:bg-white/10"
+                    >
+                      <p className="text-sm font-medium text-white">Consultancy Experience</p>
+                      <p className="text-xs text-muted-foreground">Products and platforms I've built</p>
+                    </Link>
+                    <Link
                       to="/work-experience"
                       className="rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-left transition hover:bg-white/10"
                     >
@@ -65,6 +72,12 @@ const Index = () => {
                   className="text-sm font-medium text-foreground transition hover:text-white"
                 >
                   Home
+                </Link>
+                <Link
+                  to="/consultancy-experience"
+                  className="text-sm font-medium text-foreground transition hover:text-white"
+                >
+                  Consultancy Experience
                 </Link>
                 <Link
                   to="/work-experience"
@@ -124,7 +137,7 @@ const Index = () => {
 
         <main>
           <section className="relative border-b border-border/40">
-            <div className="container py-24">
+            <div className="container pt-12 pb-24">
               <div className="mx-auto max-w-4xl space-y-8 text-center">
                 <Badge variant="secondary" className="rounded-full border border-white/10 bg-white/5 px-4 py-1 text-xs uppercase tracking-[0.35em] text-muted-foreground">
                   Product Manager · Consultancy Services
